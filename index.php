@@ -34,8 +34,23 @@ $tsql= "SELECT id, pw
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <title> 신라 마켓 </title>
 </head>
 <body>
+<form enctype="multipart/form-data" name="form" method="post" action="test.php">
+    <table>
+    <tr>
+        <td>이미지:</td>
+        <td><input type="file" name="imageform" /></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="전송" />
+        </td>
+    </tr>
+    </table>
+</form>
+
 <form>
     <div align="center" style="width:500px; height:400px; float:center; border:1px; background-color:green">
         <p align="center">
