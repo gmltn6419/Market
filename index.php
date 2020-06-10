@@ -73,6 +73,10 @@ $tsql= "SELECT id, pw
 </form>
 <form>
 <?php
+$connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:market01.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+
 $tsql2= "SELECT * FROM image";
 $getResults1= sqlsrv_query($conn, $tsql2);
 
@@ -84,7 +88,7 @@ while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
     $path = $row2['path'];
     $filename = $row2['filename'];
 }
-sqlsrv_free_stmt($getResults);
+sqlsrv_free_stmt($getResults1);
 ?>
 <td><img src="<?=$path.$filename;?>" /></td>
 </form>
