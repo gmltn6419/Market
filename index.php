@@ -37,7 +37,7 @@ $tsql= "SELECT id, pw
      $pw = $row['pw'];
     }
     sqlsrv_free_stmt($getResults);
-    sqlscv_close($conn);
+    //sqlscv_close($conn);
 ?>
 
 <!doctype html>
