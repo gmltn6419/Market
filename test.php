@@ -15,11 +15,11 @@ $serverName = "tcp:market01.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 //$path = $_SERVER['DOCUMENT_ROOT'].'/testBBS/';
-$path = "./";
+//$path = "./";
 $filename =  date("YmdHis").".jpg";
 move_uploaded_file($_FILES['imageform']['tmp_name'], $filename);
 
-$tsql= "INSERT INTO image (path, filename) VALUES ( '$path', '$filename')";
+$tsql= "INSERT INTO image (filename) VALUES ('$filename')";
 
 $getResults= sqlsrv_query($conn, $tsql);
 echo ("Reading data from table" . PHP_EOL);
@@ -43,7 +43,7 @@ sqlsrv_free_stmt($getResults);
 <tr>
     <td>전송이미지</td>
 
-<td><img src="<?=$path.$filename;?>" /></td>
+<td><img src="<?=$filename;?>" /></td>
 </tr>
 </table>
 <p><b>전송완료</b></p>
