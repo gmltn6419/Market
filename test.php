@@ -15,7 +15,7 @@ $serverName = "tcp:market01.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 //$path = $_SERVER['DOCUMENT_ROOT'].'/testBBS/';
-$path = "/testBBS/";
+$path = "./";
 $filename =  date("YmdHis").".jpg";
 move_uploaded_file($_FILES['imageform']['tmp_name'], $filename);
 
