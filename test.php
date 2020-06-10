@@ -31,12 +31,8 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     //$pw = $row['pw'];
 }
 sqlsrv_free_stmt($getResults);
-
-$query = "insert into test_image (path,filename) values ('$path','$filename')";
-
-$db_inet->query($query);
-
 ?>
+
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
