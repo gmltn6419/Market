@@ -37,7 +37,6 @@ $tsql= "SELECT id, pw
      $pw = $row['pw'];
     }
     sqlsrv_free_stmt($getResults);
-    //sqlscv_close($conn);
 ?>
 
 <!doctype html>
@@ -50,7 +49,7 @@ $tsql= "SELECT id, pw
     <div align="center" style="width:500px; height:400px; float:center; border:1px; background-color:green">
         <p align="center">
             <strong>아이디</strong>
-            <input type="text" name="id" value="1">
+            <input type="text" name="id" value="<?=$id?>">
         </p>
         
         <p align="center">
