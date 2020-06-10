@@ -80,7 +80,7 @@ echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
 while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
-    //echo ($row['id'] . " " . $row['pw'] . PHP_EOL);
+    echo ($row['path'] . " " . $row['filename'] . PHP_EOL);
     $path = $row2['path'];
     $filename = $row2['filename'];
 }
