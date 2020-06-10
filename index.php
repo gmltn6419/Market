@@ -81,10 +81,10 @@ $tsql2= "SELECT * FROM image";
 $getResults1= sqlsrv_query($conn, $tsql2);
 
 echo ("Reading data from table" . PHP_EOL);
-if ($getResults == FALSE)
+if ($getResults1 == FALSE)
     echo (sqlsrv_errors());
-while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
-    echo ($row['path'] . " " . $row['filename'] . PHP_EOL);
+while ($row2 = sqlsrv_fetch_array($getResults1, SQLSRV_FETCH_ASSOC)) {
+    echo ($row2['path'] . " " . $row['filename'] . PHP_EOL);
     $path = $row2['path'];
     $filename = $row2['filename'];
 }
