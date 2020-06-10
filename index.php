@@ -62,7 +62,7 @@ $tsql= "SELECT id, pw
             <input type="text" name="name" value="이름 입력">
         </p>
         <p align="center">
-        <button type="button" onClick="test.php">test</button>
+        <button type="button" onClick="location.href='test.php'">test</button>
     </div>
 </form>
 </body>
