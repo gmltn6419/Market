@@ -41,8 +41,9 @@ sqlsrv_free_stmt($getResults);
 <body>
 <table>
 <tr>
-	<td>전송이미지</td>
-	<td><img src="<?=$path.$filename;?>" /></td>
+    <td>전송이미지</td>
+
+<td><img src="<?=$path.$filename;?>" /></td>
 </tr>
 </table>
 <p><b>전송완료</b></p>

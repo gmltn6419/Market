@@ -71,5 +71,22 @@ $tsql= "SELECT id, pw
         <button type="button" onClick="location.href='test.php'">test</button>
     </div>
 </form>
+<form>
+<?php
+$tsql2= "SELECT * FROM image";
+$getResults1= sqlsrv_query($conn, $tsql2);
+
+echo ("Reading data from table" . PHP_EOL);
+if ($getResults == FALSE)
+    echo (sqlsrv_errors());
+while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
+    //echo ($row['id'] . " " . $row['pw'] . PHP_EOL);
+    $path = $row2['path'];
+    $filename = $row2['filename'];
+}
+sqlsrv_free_stmt($getResults);
+?>
+<td><img src="<?=$path.$filename;?>" /></td>
+</form>
 </body>
 </html>
