@@ -1,4 +1,3 @@
-
 <?php
 // PHP Data Objects(PDO) Sample Code:
 try {
@@ -29,11 +28,11 @@ $tsql= "SELECT id, pw
         WHERE id = 'gmltn6419'";
 
     $getResults= sqlsrv_query($conn, $tsql);
-    //echo ("Reading data from table" . PHP_EOL);
+    echo ("Reading data from table" . PHP_EOL);
     if ($getResults == FALSE)
         echo (sqlsrv_errors());
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-     //echo ($row['id'] . " " . $row['pw'] . PHP_EOL);
+     echo ($row['id'] . " " . $row['pw'] . PHP_EOL);
      $id = $row['id'];
      $pw = $row['pw'];
     }
