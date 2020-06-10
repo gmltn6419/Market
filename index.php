@@ -13,16 +13,7 @@ catch (PDOException $e) {
 $connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:market01.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
-/*
-$serverName = "tcp:market01.database.windows.net,1433"; // update me
-$connectionOptions = array(
-    "Database" => "Market", // update me
-    "Uid" => "heesu", // update me
-    "PWD" => "dlvlwk12@" // update me
-);
-//Establishes the connection
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-*/
+
 $tsql= "SELECT id, pw
         FROM member
         WHERE id = 'gmltn6419'";
