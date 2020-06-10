@@ -14,16 +14,24 @@ $connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "M
 $serverName = "tcp:market01.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
+$serverName = "tcp:market01.database.windows.net,1433"; // update me
+$connectionOptions = array(
+    "Database" => "Market", // update me
+    "Uid" => "heesu", // update me
+    "PWD" => "dlvlwk12@" // update me
+);
+//Establishes the connection
+$conn = sqlsrv_connect($serverName, $connectionOptions);
 $tsql= "SELECT id, pw
         FROM member
         WHERE id = 'gmltn6419'";
 
     $getResults= sqlsrv_query($conn, $tsql);
-    echo ("Reading data from table" . PHP_EOL);
+    //echo ("Reading data from table" . PHP_EOL);
     if ($getResults == FALSE)
         echo (sqlsrv_errors());
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-     echo ($row['id'] . " " . $row['pw'] . PHP_EOL);
+     //echo ($row['id'] . " " . $row['pw'] . PHP_EOL);
      $id = $row['id'];
      $pw = $row['pw'];
     }
