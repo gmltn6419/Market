@@ -54,7 +54,7 @@ $tsql= "SELECT id, pw
         
         <p align="center">
             <strong>비밀번호</strong>
-            <input type="password" name="password">
+            <input type="password" name="<?=$pw?>">
         </p>
         
         <p align="center">
