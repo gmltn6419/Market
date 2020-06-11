@@ -1,4 +1,4 @@
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ae877255e92416f6f5b8b16227ee8c5"></script>
+<script type="text/javas+cript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ae877255e92416f6f5b8b16227ee8c5"></script>
 <?php
 session_destroy();
 session_start();
@@ -8,7 +8,9 @@ session_start();
     <title>글 쓰기 </title>
 </head>
 <body>
+    
 <form enctype="multipart/form-data" name="form" method="post" action="write2.php">
+    <input type="hidden" name="dbLat" id="dbLat" />
     사진 : <input type="file" name="image" />
     <br>
     제목 : <input type="text" name="title" placeholder="제목을 입력하세요!" style="width:300px">
@@ -49,6 +51,8 @@ session_start();
     //db저장
     var dbLat = latlng.getLat();
     var dbLng = latlng.getLng();
+
+    document.getElementById("dbLat").value = dbLat
 
     var message = '위도 : ' + dbLat + ' ';
     message += '경도 : ' + dbLng;
