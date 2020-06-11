@@ -8,7 +8,7 @@ session_start();
     <title>글 쓰기 </title>
 </head>
 <body>
-<form enctype="multipart/form-data" name="form" method="post" action="write2.php" align:"center">
+<form enctype="multipart/form-data" name="form" method="post" action="write2.php">
     사진 : <input type="file" name="image" />
     <br>
     제목 : <input type="text" name="title" placeholder="제목을 입력하세요!" style="width:300px">
@@ -55,12 +55,11 @@ session_start();
     
     var resultDiv = document.getElementById('clickLatlng'); 
     resultDiv.innerHTML = message;  
-
-    var sLat = '';
-    sLat = $("#Lat").val()
     });
-
     </script>
+    <?php
+        $_SESSION['Lat'] = echo "<script>dbLat</script>";
+    ?>
     <br>
     <input type="submit" value="전송" />
 </form>
