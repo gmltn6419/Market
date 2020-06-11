@@ -30,27 +30,25 @@ echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
 
-if($getResults -> num_rows==1){
-    $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
-    if($row['pw']==$pw){
-        $_SESSION['userid'] = $id;
-        if(isset($_SESSION['userid'])){
-            header('Location : ./index.php'); // 로그인 성공 시 페이지 이동
+while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+    if($getResults ->num_rows==1){
+        if($row['pw']==$pw){
+            $_SESSION['userid'] = $id;
+            if(isset($_SESSION['userid'])){
+                header('Location : ./index.php'); // 로그인 성공 시 페이지 이동
+            }
+            else{
+                echo "세션 저장 실패";
+            }
         }
         else{
-            echo "세션 저장 실패";
+            echo "wrong id or pw";
         }
     }
     else{
         echo "wrong id or pw";
     }
 }
-else{
-    echo "wrong id or pw";
-}
-/*
-while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-}
-*/
+
 sqlsrv_free_stmt($getResults);
 ?>
