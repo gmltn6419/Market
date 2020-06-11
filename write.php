@@ -49,8 +49,9 @@ session_start();
     var dbLat = latlng.getLat();
     var dbLng = latlng.getLng();
 
-    <?=$_SESSION['dbLat']?> = dbLat;
-    <?=$_SESSION['dbLng']?> = dbLng;
+    <? echo($_SESSION['dbLat']);?> = dbLat;
+    <? echo($_SESSION['dbLng']);?> = dbLng;
+
     var message = '위도 : ' + dbLat + ' ';
     message += '경도 : ' + dbLng;
     
