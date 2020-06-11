@@ -62,7 +62,7 @@ $getResults2= sqlsrv_query($conn, $tsql2);
 
 if($tsql2){
     echo "회원가입이 완료되었습니다!!!";
-    echo "<a href=signUp.html>로그인 하기</a>";
+    echo "<a href=index.php>로그인 하기</a>";
 }
 
 if ($getResults2 == FALSE)
