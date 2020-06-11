@@ -1,5 +1,6 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ae877255e92416f6f5b8b16227ee8c5"></script>
 <?php
+session_destroy();
 session_start();
 ?>
 <html>
@@ -47,6 +48,9 @@ session_start();
     //db저장
     var dbLat = latlng.getLat();
     var dbLng = latlng.getLng();
+
+    <?=$_SESSION['dbLat']?> = dbLat;
+    <?=$_SESSION['dbLng']?> = dbLng;
     var message = '위도 : ' + dbLat + ' ';
     message += '경도 : ' + dbLng;
     
