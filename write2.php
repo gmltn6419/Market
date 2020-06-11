@@ -10,8 +10,8 @@ $price=$_POST['price'];
 $Lat = $_SESSION['dbLat'];
 $Lng = $_SESSION['dbLng'];
 
-echo $title;
-echo $price;
-echo $Lat;
-echo $Lng;
+echo $title "<br>";
+echo $price "<br>";
+echo $Lat "<br>";
+echo $Lng "<br>";
 ?>
