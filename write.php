@@ -1,7 +1,7 @@
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ae877255e92416f6f5b8b16227ee8c5"></script>
 <?php
 session_start();
 ?>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ae877255e92416f6f5b8b16227ee8c5"></script>
 <html>
 <head>
     <title>글 쓰기 </title>
@@ -15,16 +15,10 @@ session_start();
     div.left {
         width: 50%;
         float: left;
-        box-sizing: border-box;
-        
-        background: #ff0;
     }
     div.right {
         width: 50%;
         float: right;
-        box-sizing: border-box;
-        
-        background: #0ff;
     }
     </style>
 </head>
@@ -39,11 +33,10 @@ session_start();
         가격 : <input type="text" name="price" placeholder="가격을 입력하세요!" style="width:300px">
     </div>
     <div class="right">
+        <form>
         <div id="map" style="width:100%;height:350px;"></div>
         <p><em>지도를 클릭해주세요!</em></p> 
         <div id="clickLatlng"></div>
-
-        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	6ae877255e92416f6f5b8b16227ee8c5"></script> 
         <script>
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
         mapOption = { 
@@ -77,7 +70,7 @@ session_start();
         
         dbLat = <?=$_SESSION['dbLat']?>;
         dbLng = <?=$_SESSION['dbLng']?>;
-        
+
         var message = '위도 : ' + dbLat + ' ';
         message += '경도 : ' + dbLng;
 
@@ -86,8 +79,8 @@ session_start();
 
         });
         </script>
-
         </div>
+        </form>
 </div>
 <br>
 <input type="submit" value="전송" />
