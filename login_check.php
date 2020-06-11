@@ -31,7 +31,7 @@ if ($getResults == FALSE)
     echo (sqlsrv_errors());
 
 if($getResults -> num_rows==1){
-    $row=$getResults -> sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
+    $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
     if($row['pw']==$pw){
         $_SESSION['userid'] = $id;
         if(isset($_SESSION['userid'])){
@@ -48,9 +48,9 @@ if($getResults -> num_rows==1){
 else{
     echo "wrong id or pw";
 }
-    
+/*
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 }
-
+*/
 sqlsrv_free_stmt($getResults);
 ?>
