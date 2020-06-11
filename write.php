@@ -50,8 +50,6 @@ session_start();
     var dbLat = latlng.getLat();
     var dbLng = latlng.getLng();
 
-    <?php echo "$_SESSION['Lat']"?> = dbLat;
-
     var message = '위도 : ' + dbLat + ' ';
     message += '경도 : ' + dbLng;
     
