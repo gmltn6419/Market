@@ -7,7 +7,7 @@ if(!isset($_SESSION['userid'])) // 세션 존재 X
 }
 
 echo "로그인 성공!";
-echo "(a href=logout.php>Log Out</a>";
+echo "<a href=logout.php> Log Out </a>";
 ?>
 
 <html>
