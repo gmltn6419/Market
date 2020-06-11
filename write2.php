@@ -7,9 +7,7 @@ move_uploaded_file($_FILES['imageform']['tmp_name'], $filename);
 $title=$_POST['title'];
 $price=$_POST['price'];
 
-if(!empty($GET['dbLat'])){
-    $Lat = $GET['dbLat'];
-}
+$Lat=$_SESSION['Lat'];
 
 echo $title "<br>";
 echo $price "<br>";
