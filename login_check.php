@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $id=$_POST['id'];
 $pw=$_POST['pw'];
 
@@ -22,12 +23,15 @@ $tsql= "SELECT *
         FROM member
         WHERE id = '$id'";
 
+echo $id;
+
 $getResults= sqlsrv_query($conn, $tsql);
 
 echo ("Reading data from table" . PHP_EOL);
 
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
+
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     if($getResults -> num_rows==1){
         $row=$getResults -> sqlsrv_fetch_array(SQLSRV_FETCH_ASSOC);

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $id=$_POST['id'];
 $pw=$_POST['pw'];
 $pwc=$_POST['pwc'];
@@ -18,7 +20,6 @@ if($id==NULL || $pw==NULL || $name==NULL)
     exit();
 }
 
-<?php
 // PHP Data Objects(PDO) Sample Code:
 try {
     $conn = new PDO("sqlsrv:server = tcp:market01.database.windows.net,1433; Database = Market", "heesu", "dlvlwk12@");
@@ -51,23 +52,25 @@ $tsql= "SELECT *
         }
     }
     sqlsrv_free_stmt($getResults);
-?>
 
-$tsql= "INSERT INTO member VALUES('$id','$pw', '$name')");
+$connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:market01.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+$tsql2= "INSERT INTO member VALUES('$id','$pw', '$name')";
 
-$getResults= sqlsrv_query($conn, $tsql);
+$getResults2= sqlsrv_query($conn, $tsql2);
 
-if($tsql){
+if($tsql2){
     echo "회원가입이 완료되었습니다!!!";
 }
 
 echo ("Reading data from table" . PHP_EOL);
-if ($getResults == FALSE)
+if ($getResults2 == FALSE)
     echo (sqlsrv_errors());
-while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+while ($row = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
     //echo ($row['id'] . " " . $row['pw'] . PHP_EOL);
     //$id = $row['id'];
     //$pw = $row['pw'];
 }
-sqlsrv_free_stmt($getResults);
+sqlsrv_free_stmt($getResults2);
 ?>
