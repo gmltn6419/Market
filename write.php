@@ -18,7 +18,6 @@
     <p><em>지도를 클릭해주세요!</em></p> 
     <div id="map" style="width:50%;height:350px;"></div>
     <div id="clickLatlng"></div>
-    <input type="hidden" name="Lat" id="Lat" value="<?=$_SESSION['Lat']?>">
     <script>
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
         mapOption = { 
