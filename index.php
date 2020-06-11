@@ -1,3 +1,4 @@
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ae877255e92416f6f5b8b16227ee8c5"></script>
 <?php
 // PHP Data Objects(PDO) Sample Code:
 try {
@@ -95,8 +96,6 @@ sqlsrv_free_stmt($getResults1);
 
 <form>
 <div id="map" style="width:100%;height:350px;"></div>
-
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ae877255e92416f6f5b8b16227ee8c5"></script>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
