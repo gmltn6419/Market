@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>글 쓰기 </title>
-    <script type="text/javas+cript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ae877255e92416f6f5b8b16227ee8c5"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ae877255e92416f6f5b8b16227ee8c5"></script>
 </head>
 <body>
 <form enctype="multipart/form-data" name="form" method="post" action="write2.php">
