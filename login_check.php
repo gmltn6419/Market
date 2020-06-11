@@ -39,10 +39,12 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
         }
         else{
             echo "세션 저장 실패";
+            exit();
         }
     }
     else{
         echo "wrong id or pw1";
+        exit();
     }
 }
 
