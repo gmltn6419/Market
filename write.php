@@ -47,8 +47,10 @@ session_start();
     marker.setPosition(latlng);
     
     //db저장
-    var dbLat = latlng.getLat() = <?php echo "$_SESSION['Lat']"?>;
+    var dbLat = latlng.getLat();
     var dbLng = latlng.getLng();
+
+    <?php echo "$_SESSION['Lat']"?> = dbLat;
 
     var message = '위도 : ' + dbLat + ' ';
     message += '경도 : ' + dbLng;
