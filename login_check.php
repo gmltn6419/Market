@@ -28,8 +28,10 @@ $getResults= sqlsrv_query($conn, $tsql);
 
 echo ("Reading data from table" . PHP_EOL);
 
-if ($getResults == FALSE)
-    echo (sqlsrv_errors());
+if ($getResults == FALSE){
+    echo "세션 저장 실패";
+    exit();
+}
 
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     if($row['pw']==$pw){
@@ -41,10 +43,6 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
             echo "세션 저장 실패";
             exit();
         }
-    }
-    else{
-        echo "wrong id or pw1";
-        exit();
     }
 }
 
