@@ -47,7 +47,7 @@ session_start();
     marker.setPosition(latlng);
     
     //db저장
-    var dbLat = latlng.getLat();
+    var dbLat = latlng.getLat() = <?php echo "$_SESSION['Lat']"?>;
     var dbLng = latlng.getLng();
 
     var message = '위도 : ' + dbLat + ' ';
@@ -57,9 +57,6 @@ session_start();
     resultDiv.innerHTML = message;  
     });
     </script>
-    <?php
-        $_SESSION['Lat'] = echo "<script>dbLat</script>";
-    ?>
     <br>
     <input type="submit" value="전송" />
 </form>
