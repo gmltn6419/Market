@@ -48,8 +48,6 @@ session_start();
     //db저장
     var dbLat = latlng.getLat();
     var dbLng = latlng.getLng();
-    
-    window.open("demo.php?dblat="+dbLat);
 
     var message = '위도 : ' + dbLat + ' ';
     message += '경도 : ' + dbLng;
@@ -57,6 +55,8 @@ session_start();
     var resultDiv = document.getElementById('clickLatlng'); 
     resultDiv.innerHTML = message;  
     });
+
+    window.open("write2.php?dblat="+dbLat);
     </script>
     <br>
     <input type="submit" value="전송" />
