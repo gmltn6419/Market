@@ -31,13 +31,12 @@ if ($getResults == FALSE)
     echo (sqlsrv_errors());
 
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-    echo $row['id'];
-    echo $row['pw'];
-    if($getResults ->num_rows==1){
+
+    if($getResults->num_rows==1){
         if($row['pw']==$pw){
             $_SESSION['userid']=$id;
             if(isset($_SESSION['userid'])){
-                header('Location : ./index.php'); // 로그인 성공 시 페이지 이동
+                header('Location :./index.php'); // 로그인 성공 시 페이지 이동
             }
             else{
                 echo "세션 저장 실패";
