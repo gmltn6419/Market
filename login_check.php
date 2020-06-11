@@ -20,31 +20,33 @@ $connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "M
 $serverName = "tcp:market01.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
-$tsql= "SELECT id
-        FROM member;"
+$tsql= "SELECT *
+        FROM member
+        WHERE id = '$id'";
 
 $getResults= sqlsrv_query($conn, $tsql);
 
 echo ("Reading data from table" . PHP_EOL);
 
+if ($getResults == FALSE){
+    echo (sqlsrv_errors());
+}
+
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-    if($row['id']!=$id){
-        echo "세션 저장 실패";
-        exit();
-    }
-    else{
-        if($row['pw']==$pw){
-            $_SESSION['userid']=$id;
-            if(isset($_SESSION['userid'])){
-                header('Location: ./index.php'); // 로그인 성공 시 페이지 이동
-            }
-            else{
-                echo "세션 저장 실패";
-                exit();
-            }
+    if($row['pw']==$pw){
+        $_SESSION['userid']=$id;
+        if(isset($_SESSION['userid'])){
+            header('Location: ./index.php'); // 로그인 성공 시 페이지 이동
+        }
+        else{
+            echo "세션 저장 실패";
+            exit();
         }
     }
-    
+    else{
+        echo "wrong id or pw1";
+        exit();
+    }
 }
 
 sqlsrv_free_stmt($getResults);
