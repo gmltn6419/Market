@@ -52,7 +52,7 @@ session_start();
     var dbLat = latlng.getLat();
     var dbLng = latlng.getLng();
 
-    document.getElementById("dbLat").value = dbLat
+    document.getElementById("dbLat").value = dbLat;
 
     var message = '위도 : ' + dbLat + ' ';
     message += '경도 : ' + dbLng;
