@@ -51,6 +51,7 @@
         var dbLng = latlng.getLng();
 
         document.getElementById("dbLat").value = "123.34567";
+        alert(document.getElementById("dbLat").value);
 
         var message = '위도 : ' + dbLat + ' ';
         message += '경도 : ' + dbLng;
