@@ -5,9 +5,6 @@ if(!isset($_SESSION['userid'])) // 세션 존재 X
 {
     header ('Location: ./login.html');
 }
-
-echo "로그인 성공!";
-echo "<a href=logout.php> Log Out </a>";
 ?>
 
 <html>
@@ -15,6 +12,12 @@ echo "<a href=logout.php> Log Out </a>";
 <title> SILLA MARKET </title>
 </head>
 <body>
+<div align="center">
+<a href=logout.php> Log Out </a>
 접속자 ID : <label for="id"> <?=$id?> </label>
+<br><br><br><br>
+<button style="height:200px;width:200px" onclick="location.href='transaction.php'"> 직거래 </button>
+<button style="height:200px;width:200px" onclick="location.href='coupon.php'"> 쿠폰 </button>
+</div>
 </body>
 </html>
