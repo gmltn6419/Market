@@ -105,25 +105,6 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-<?php
-$connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:market01.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
-
-$tsql2= "SELECT * FROM image";
-$getResults1= sqlsrv_query($conn, $tsql2);
-
-echo ("Reading data from table" . PHP_EOL);
-if ($getResults1 == FALSE)
-    echo (sqlsrv_errors());
-while ($row2 = sqlsrv_fetch_array($getResults1, SQLSRV_FETCH_ASSOC)) {
-    echo ($row2['filename'] . PHP_EOL);
-    //$path = $row2['path'];
-    $filename = $row2['filename'];
-}
-sqlsrv_free_stmt($getResults1);
-?>
-
 var imageSrc = '<?=$filename;?>', // 마커이미지의 주소입니다    
     imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
     imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
@@ -140,6 +121,7 @@ var marker = new kakao.maps.Marker({
 
 // 마커가 지도 위에 표시되도록 설정합니다
 marker.setMap(map);  
+</script>
 </form>
 </body>
 </html>
