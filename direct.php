@@ -17,13 +17,11 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 $tsql= "SELECT filename FROM image";
 $getResults= sqlsrv_query($conn, $tsql);
 
-echo ("Reading data from table" . PHP_EOL);
+//echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
-while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-    for($i = 0; $i < $row.length(); $i++){
-        $theVariable[$i] = $row['filename']; 
-    }
+while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {    
+    $theVariable[$i] = $row['filename']; 
 }
 sqlsrv_free_stmt($getResults);
 
@@ -42,10 +40,8 @@ if ($getResults2 == FALSE)
     echo (sqlsrv_errors());
 
 while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
-    for($i2 = 0; $i2 < $row2.length(); $i2++){
-        $theVariable2[$i2] = $row2['Lat'];
-        $theVariable3[$i2] = $row2['Lng'];
-    }
+    $theVariable2[$i2] = $row2['Lat'];
+    $theVariable3[$i2] = $row2['Lng'];
 }
 
 sqlsrv_free_stmt($getResults2);
