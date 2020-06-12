@@ -1,6 +1,6 @@
 <?php
 session_start();
-header('Content-Type:text/html; charset=utf-8');
+header("Content-Type: text/html; charset=UTF-8");
 
 $id=$_SESSION['userid'];
 

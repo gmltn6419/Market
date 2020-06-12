@@ -1,6 +1,7 @@
 <?php
 session_destroy();
 session_start();
+header("Content-Type: text/html; charset=UTF-8");
 
 $id=$_POST['id'];
 $pw=$_POST['pw'];
