@@ -9,7 +9,13 @@ $title=$_POST['title'];
 $price=$_POST['price'];
 //$dbLat = $_POST['dbLat'];
 
-echo $title "<br>";
-echo $price "<br>";
+echo $title;
+echo $price;
 //echo $dbLat "<br>";
 ?>
+<html>
+<head>
+</head>
+<body>
+</body>
+</html>
