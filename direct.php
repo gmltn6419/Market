@@ -19,6 +19,7 @@ $getResults= sqlsrv_query($conn, $tsql);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {    
+    echo $row[0]."ggggg<br>\n";
     $theVariable = array($row['filename']); 
 }
 
@@ -30,7 +31,7 @@ $connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "M
 $serverName = "tcp:market01.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
-$tsql2= "SELECT Lat, Lng FROM product";
+$tsql2= "SELECT Lat FROM product";
 $getResults2= sqlsrv_query($conn, $tsql2);
 
 //echo ("Reading data from table" . PHP_EOL);
@@ -39,7 +40,6 @@ if ($getResults2 == FALSE)
 
 while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
     $theVariable2 = array($row2['Lat']);
-    $theVariable3 = array($row2['Lng']);
 }
 
 echo $theVariable2[0]."<br>\n";
@@ -48,6 +48,25 @@ echo $theVariable3[1]."<br>\n";
 echo $theVariable3[2];
 
 sqlsrv_free_stmt($getResults2);
+
+$connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:market01.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+
+$tsql3= "SELECT Lng FROM product";
+$getResults3= sqlsrv_query($conn, $tsql3);
+
+//echo ("Reading data from table" . PHP_EOL);
+if ($getResults3 == FALSE)
+    echo (sqlsrv_errors());
+
+while ($row3 = sqlsrv_fetch_array($getResults3, SQLSRV_FETCH_ASSOC)) {
+    $theVariable3 = array($row3['Lng']);
+}
+echo $theVariable3[1]."<br>\n";
+echo $theVariable3[2];
+
+sqlsrv_free_stmt($getResults3);
 ?>
 
 <html>
