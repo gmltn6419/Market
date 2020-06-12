@@ -67,8 +67,8 @@ if ($getResults3 == FALSE)
 while ($row3 = sqlsrv_fetch_array($getResults3, SQLSRV_FETCH_ASSOC)) {
     $theVariable3[] =$row3['Lng'];
 }
-echo $theVariable3[1]."<br>\n";
-echo $theVariable3[2];
+echo $theVariable3[0]."<br>\n";
+echo $theVariable3[1];
 
 sqlsrv_free_stmt($getResults3);
 ?>
@@ -91,6 +91,7 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
 var positions1 = <?php echo json_encode($theVariable2)?>;
+alert "position1[0]";
 var positions2 = <?php echo json_encode($theVariable3)?>;
 var imageSrc = <?php echo json_encode($theVariable)?>;
 
