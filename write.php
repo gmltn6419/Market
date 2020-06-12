@@ -11,9 +11,9 @@
     <!-- <input type="hidden" name="dbLat" id="dbLat" /> 
     사진 : <input type="file" name="image" /> -->
     <br>
-    제목 : <input type="text" name="title" placeholder="제목을 입력하세요!" style="width:300px">
+    제목 : <input type="text" name="title" style="width:300px">
     <br>
-    가격 : <input type="text" name="price" placeholder="가격을 입력하세요!" style="width:300px">
+    가격 : <input type="text" name="price" style="width:300px">
     <br>
     <p><em>지도를 클릭해주세요!</em></p> 
     <div id="map" style="width:50%;height:350px;"></div>
@@ -62,7 +62,7 @@
     });
     </script>
     <br>
-    <input type="submit" value="전송" />
+    <input type="submit" value="submit"/>
 </form>
 </body>
 </html>
