@@ -90,9 +90,9 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-var positions1 = <?php echo json_encode($theVariable2); ?>;
-var positions2 = <?php echo json_encode($theVariable3); ?>;
-var imageSrc = <?php echo json_encode($theVariable); ?>;
+var positions1 = new Array("<?=implode("\",\"" , $theVariable2);?>");
+var positions2 = new Array("<?=implode("\",\"" , $theVariable3);?>");
+var imageSrc = new Array("<?=implode("\",\"" , $theVariable);?>");
 
 for (var i = 0; i < positions1.length; i ++) {   
     // 마커 이미지의 이미지 크기 입니다
@@ -104,7 +104,7 @@ for (var i = 0; i < positions1.length; i ++) {
     // 마커를 생성합니다
     var marker = new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
-        position: new kakao.maps.LatLng(position1[i], position2[i]),// 마커를 표시할 위치
+        position: new kakao.maps.LatLng(positions1[i], positions2[i]),// 마커를 표시할 위치
         image : markerImage // 마커 이미지 
     });
 }
