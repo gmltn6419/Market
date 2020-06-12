@@ -67,12 +67,12 @@ var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니
 var positions = new Array();
 var imageSrc = new Array();
 
-for (var i = 0; i < <?=$theVariable2?>.length; i ++) {
-    positions[i] = latlng: new kakao.maps.LatLng(<?=$theVariable2?>[i],<?=$theVariable3?>[i]);
+for (var i = 0; i < <?php echo json_encode($theVariable2)?>.length; i ++) {
+    positions[i] = latlng: new kakao.maps.LatLng(<?php echo json_encode($theVariable2)?>[i],<?php echo json_encode($theVariable3)?>[i]);
 }
 
-for (var i = 0; i < <?=$theVariable?>.length; i ++) {
-    imageSrc[i] = <?=$theVariable?>[i];
+for (var i = 0; i < <?php echo json_encode($theVariable)?>.length; i ++) {
+    imageSrc[i] = <?php echo json_encode($theVariable)?>[i];
 }
 
 
