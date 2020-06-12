@@ -21,9 +21,7 @@ echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-    for(int i=0; i<=$row.length(); i++){
-        $theVariable = $row['filename'];
-    }
+    $theVariable = $row['filename']; 
 }
 sqlsrv_free_stmt($getResults);
 
@@ -42,11 +40,10 @@ if ($getResults2 == FALSE)
     echo (sqlsrv_errors());
 
 while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
-    for(int i=0; i<=$row2.length(); i++){
-        $theVariable2 = $row['Lat'];
-        $theVariable3 = $row['Lng'];
-    }
+    $theVariable2 = $row['Lat'];
+    $theVariable3 = $row['Lng'];
 }
+
 sqlsrv_free_stmt($getResults2);
 ?>
 
@@ -73,7 +70,7 @@ for (var i = 0; i < <?=$theVariable2?>.length; i ++) {
 }
 
 for (var i = 0; i < <?=$theVariable?>.length; i ++) {
-    var imageSrc[i] = <?=$theVariable2[i]?>;
+    var imageSrc[i] = <?=$theVariable[i]?>;
 }
 
 
@@ -95,7 +92,7 @@ for (var i = 0; i < positions.length; i ++) {
 
 
 /*
-var imageSrc = '<?=$filename[];?>', // 마커이미지의 주소입니다    
+var imageSrc = '', // 마커이미지의 주소입니다    
     imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
     imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
       
