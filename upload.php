@@ -32,7 +32,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 $tsql= "INSERT INTO product VALUES ('$title','$price','$dbLat','$dbLng','$id')";
 
 $getResults= sqlsrv_query($conn, $tsql);
-echo ("Reading data from table" . PHP_EOL);
+// echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
@@ -52,7 +52,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 $tsql2= "INSERT INTO image (filename) VALUES ('$filename')";
 
 $getResults2= sqlsrv_query($conn, $tsql2);
-echo ("Reading data from table" . PHP_EOL);
+//echo ("Reading data from table" . PHP_EOL);
 if ($getResults2 == FALSE)
     echo (sqlsrv_errors());
 while ($row = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {

@@ -10,7 +10,7 @@
 <form enctype="multipart/form-data" name="form" method="post" action="upload.php">
     <input type="hidden" name="dbLat" id="dbLat" />
     <input type="hidden" name="dbLng" id="dbLng" />
-    사진 : <input type="file" name="image" />
+    사진 : <input type="file" name="imageform" />
     <br>
     제목 : <input type="text" name="title" placeholder="제목을 입력하세요!" style="width:300px">
     <br>
