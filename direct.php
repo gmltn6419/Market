@@ -19,7 +19,6 @@ echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-    echo ($row['filename'] . PHP_EOL);
     $filename = $row['filename'];
 }
 sqlsrv_free_stmt($getResults);
@@ -42,7 +41,7 @@ while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
 }
 sqlsrv_free_stmt($getResults2);
 ?>
-?>
+
 <html>
 <head>
     <title> 직거래 </title>
