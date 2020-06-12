@@ -79,7 +79,7 @@ for (var i = 0; i < positions1.length; i ++) {
     // 마커를 생성합니다
     var marker = new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
-        position:  latlng: new kakao.maps.LatLng(position1[i], position2[i])// 마커를 표시할 위치
+        position: new kakao.maps.LatLng(position1[i], position2[i]),// 마커를 표시할 위치
         image : markerImage // 마커 이미지 
     });
 }
