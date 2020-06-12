@@ -18,9 +18,11 @@ $getResults= sqlsrv_query($conn, $tsql);
 //echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
+
+$theVariable = [];  
+    
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {    
-    echo $row[0]."ggggg<br>\n";
-    $theVariable = array($row['filename']); 
+    $theVariable[] = $row['filename']; 
 }
 
 echo $theVariable[0]."<br>\n";
@@ -34,18 +36,18 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 $tsql2= "SELECT Lat FROM product";
 $getResults2= sqlsrv_query($conn, $tsql2);
 
+$theVariable2 = [];
+
 //echo ("Reading data from table" . PHP_EOL);
 if ($getResults2 == FALSE)
     echo (sqlsrv_errors());
 
 while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
-    $theVariable2 = array($row2['Lat']);
+    $theVariable2[] = $row2['Lat'];
 }
 
 echo $theVariable2[0]."<br>\n";
 echo $theVariable2[1]."<br>\n";
-echo $theVariable3[1]."<br>\n";
-echo $theVariable3[2];
 
 sqlsrv_free_stmt($getResults2);
 
@@ -56,12 +58,14 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 $tsql3= "SELECT Lng FROM product";
 $getResults3= sqlsrv_query($conn, $tsql3);
 
+$theVariable3 = [];
+
 //echo ("Reading data from table" . PHP_EOL);
 if ($getResults3 == FALSE)
     echo (sqlsrv_errors());
 
 while ($row3 = sqlsrv_fetch_array($getResults3, SQLSRV_FETCH_ASSOC)) {
-    $theVariable3 = array($row3['Lng']);
+    $theVariable3[] =$row3['Lng'];
 }
 echo $theVariable3[1]."<br>\n";
 echo $theVariable3[2];
