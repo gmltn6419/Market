@@ -21,7 +21,9 @@ echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-    $theVariable = $row['filename']; 
+    for(i = 0; i <= $row.length(); i++){
+        $theVariable = $row['filename']; 
+    }
 }
 sqlsrv_free_stmt($getResults);
 
@@ -40,8 +42,10 @@ if ($getResults2 == FALSE)
     echo (sqlsrv_errors());
 
 while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
-    $theVariable2 = $row['Lat'];
-    $theVariable3 = $row['Lng'];
+    for(i = 0; i <= $row2.length(); i++){
+        $theVariable2 = $row2['Lat'];
+        $theVariable3 = $row2['Lng'];
+    }
 }
 
 sqlsrv_free_stmt($getResults2);
