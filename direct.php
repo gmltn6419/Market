@@ -77,7 +77,7 @@ var marker = new kakao.maps.Marker({
 // 마커가 지도 위에 표시되도록 설정합니다
 marker.setMap(map);  
 </script>
-<button align='center' style="height:100px;width:100px; font-size: 25px;" onclick="location.href='write.php'"> 글 작성 </button>
+<button style="height:100px;width:100px; font-size: 25px;" onclick="location.href='write.php'"> 글 작성 </button>
 </form>    
 </body>
 </html>
