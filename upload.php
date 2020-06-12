@@ -50,7 +50,7 @@ if ($getResults2 == FALSE)
     echo (sqlsrv_errors());
 
 if($tsql2){
-    echo "글 작성 완료!";
+    echo "글 작성 완료! <br>\n";
     echo "<a href=./index.php>back page</a>";
 }
 
