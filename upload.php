@@ -10,8 +10,8 @@ $price=$_POST['price'];
 $dbLat = $_POST['dbLat'];
 $dbLng = $_POST['dbLng'];
 
-echo $title."\n";
-echo $price."\n";
-echo $dbLat."";
-echo $dbLng."";
+echo $title."<br>\n";
+echo $price."<br>\n";
+echo $dbLat."<br>\n";
+echo $dbLng;
 ?>
