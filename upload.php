@@ -46,9 +46,6 @@ $connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "M
 $serverName = "tcp:market01.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
-//$path = $_SERVER['DOCUMENT_ROOT'].'/testBBS/';
-//$path = "./";
-
 $tsql2= "INSERT INTO image (filename) VALUES ('$filename')";
 
 $getResults2= sqlsrv_query($conn, $tsql2);
@@ -56,7 +53,7 @@ $getResults2= sqlsrv_query($conn, $tsql2);
 if ($getResults2 == FALSE)
     echo (sqlsrv_errors());
 while ($row = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
-    echo "글 작성 완료!"
+    echo "글 작성 완료!";
     echo "<a href=./index.php>back page</a>";
 }
 
