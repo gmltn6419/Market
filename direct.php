@@ -90,10 +90,9 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-var positions1 = <?php echo json_encode($theVariable2)?>;
-document.write(position1[0]);
-var positions2 = <?php echo json_encode($theVariable3)?>;
-var imageSrc = <?php echo json_encode($theVariable)?>;
+var positions1 = <?php echo json_encode($theVariable2); ?>;
+var positions2 = <?php echo json_encode($theVariable3); ?>;
+var imageSrc = <?php echo json_encode($theVariable); ?>;
 
 for (var i = 0; i < positions1.length; i ++) {   
     // 마커 이미지의 이미지 크기 입니다
