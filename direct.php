@@ -64,19 +64,11 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-var positions = new Array();
-var imageSrc = new Array();
+var positions1 = <?php echo json_encode($theVariable2)?>;
+var positions2 = <?php echo json_encode($theVariable3)?>;
+var imageSrc = <?php echo json_encode($theVariable)?>;
 
-for (var i = 0; i < <?php echo json_encode($theVariable2)?>.length; i ++) {
-    positions[i] = latlng: new kakao.maps.LatLng(<?php echo json_encode($theVariable2)?>[i],<?php echo json_encode($theVariable3)?>[i]);
-}
-
-for (var i = 0; i < <?php echo json_encode($theVariable)?>.length; i ++) {
-    imageSrc[i] = <?php echo json_encode($theVariable)?>[i];
-}
-
-
-for (var i = 0; i < positions.length; i ++) {
+for (var i = 0; i < positions1.length; i ++) {
     
     // 마커 이미지의 이미지 크기 입니다
     var imageSize = new kakao.maps.Size(24, 35); 
@@ -87,7 +79,7 @@ for (var i = 0; i < positions.length; i ++) {
     // 마커를 생성합니다
     var marker = new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
-        position: positions[i].latlng, // 마커를 표시할 위치
+        position:  latlng: new kakao.maps.LatLng(position1[i], position2[i])// 마커를 표시할 위치
         image : markerImage // 마커 이미지 
     });
 }
