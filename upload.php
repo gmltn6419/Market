@@ -52,7 +52,7 @@ $getResults2= sqlsrv_query($conn, $tsql2);
 //echo ("Reading data from table" . PHP_EOL);
 if ($getResults2 == FALSE)
     echo (sqlsrv_errors());
-while ($row = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
+while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
     echo "글 작성 완료!";
     echo "<a href=./index.php>back page</a>";
 }
