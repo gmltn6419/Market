@@ -89,7 +89,7 @@ var imageSrc = new Array("<?=implode("\",\"" , $theVariable);?>");
 
 for (var i = 0; i < positions1.length; i ++) {   
     // 마커 이미지의 이미지 크기 입니다
-    var imageSize = new kakao.maps.Size(60, 50); 
+    var imageSize = new kakao.maps.Size(60, 40); 
     
     // 마커 이미지를 생성합니다    
     var markerImage = new kakao.maps.MarkerImage(imageSrc[i], imageSize); 
@@ -104,5 +104,6 @@ for (var i = 0; i < positions1.length; i ++) {
 </script>
 </form>
 <button style="height:100px; width:100px; font-size: 25px;" onclick="location.href='./write.php'"> 글 작성 </button>
+<button style="height:100px; width:100px; font-size: 25px;" onclick="location.href='./index.php'"> 메인 화면 </button>
 </body>
 </html>
