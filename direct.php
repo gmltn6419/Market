@@ -21,7 +21,7 @@ echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-    for($i = 0; $i <= $row.length(); $i++){
+    for($i = 0; $i < $row.length(); $i++){
         $theVariable[$i] = $row['filename']; 
     }
 }
@@ -37,14 +37,14 @@ $theVariable3 = array();
 $tsql2= "SELECT Lat, Lng FROM product";
 $getResults2= sqlsrv_query($conn, $tsql2);
 
-echo ("Reading data from table" . PHP_EOL);
+//echo ("Reading data from table" . PHP_EOL);
 if ($getResults2 == FALSE)
     echo (sqlsrv_errors());
 
 while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
-    for($i = 0; $i <= $row2.length(); $i++){
-        $theVariable2[$i] = $row2['Lat'];
-        $theVariable3[$i] = $row2['Lng'];
+    for($i2 = 0; $i2 < $row2.length(); $i2++){
+        $theVariable2[$i2] = $row2['Lat'];
+        $theVariable3[$i2] = $row2['Lng'];
     }
 }
 
@@ -68,13 +68,15 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
+var positions[] = "";
+var imageSrc[] = "";
 
 for (var i = 0; i < <?=$theVariable2?>.length; i ++) {
-    var positions[i] = latlng: new kakao.maps.LatLng(<?=$theVariable2[i]?>,<?=$theVariable3[i]?>);
+    positions[i] = latlng: new kakao.maps.LatLng(<?=$theVariable2?>[i],<?=$theVariable3?>[i]);
 }
 
 for (var i = 0; i < <?=$theVariable?>.length; i ++) {
-    var imageSrc[i] = <?=$theVariable[i]?>;
+    imageSrc[i] = <?=$theVariable?>[i];
 }
 
 
