@@ -21,7 +21,7 @@ $getResults= sqlsrv_query($conn, $tsql);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {    
-    $theVariable[$i] = $row['filename']; 
+    $theVariable = $row['filename']; 
 }
 sqlsrv_free_stmt($getResults);
 
@@ -40,8 +40,8 @@ if ($getResults2 == FALSE)
     echo (sqlsrv_errors());
 
 while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
-    $theVariable2[$i2] = $row2['Lat'];
-    $theVariable3[$i2] = $row2['Lng'];
+    $theVariable2 = $row2['Lat'];
+    $theVariable3 = $row2['Lng'];
 }
 
 sqlsrv_free_stmt($getResults2);
