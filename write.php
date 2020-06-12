@@ -1,10 +1,10 @@
 <?php
     session_start();
 ?>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ae877255e92416f6f5b8b16227ee8c5"></script>
 <html>
 <head>
     <title>글 쓰기 </title>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ae877255e92416f6f5b8b16227ee8c5"></script>
 </head>
 <body>
 <form method="post" action="./upload.php">
