@@ -40,7 +40,6 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     //$id = $row['id'];
     //$pw = $row['pw'];
 }
-sqlsrv_free_stmt($getResults);
 
 $connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:market01.database.windows.net,1433";
@@ -59,5 +58,6 @@ while ($row = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
     alert("글 작성 완료!");
     echo "<a href=./index.php>back page</a>";
 }
+sqlsrv_free_stmt($getResults);
 sqlsrv_free_stmt($getResults2);
 ?>
