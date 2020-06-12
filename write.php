@@ -1,16 +1,12 @@
-<?php
-    session_start();
-?>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ae877255e92416f6f5b8b16227ee8c5"></script>
 <html>
 <head>
     <title>글 쓰기 </title>
 </head>
 <body>
-<form method="post" action="./upload.php">
-제목 : <input type="text" name="title" style="width:300px">
+<form method="get" action="./upload.php">
+제목 : <input type="text" name="title" style="width:300px;">
     <br>
-    가격 : <input type="text" name="price" style="width:300px">
+    가격 : <input type="text" name="price" style="width:300px;">
     <br>
     <input type="submit" value="submit"/>
 </form>
