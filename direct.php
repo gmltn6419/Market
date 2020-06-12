@@ -25,8 +25,6 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     $theVariable[] = $row['filename']; 
 }
 
-echo $theVariable[0]."<br>\n";
-echo $theVariable[1]."<br>\n";
 sqlsrv_free_stmt($getResults);
 
 $connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
@@ -46,9 +44,6 @@ while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
     $theVariable2[] = $row2['Lat'];
 }
 
-echo $theVariable2[0]."<br>\n";
-echo $theVariable2[1]."<br>\n";
-
 sqlsrv_free_stmt($getResults2);
 
 $connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
@@ -67,8 +62,6 @@ if ($getResults3 == FALSE)
 while ($row3 = sqlsrv_fetch_array($getResults3, SQLSRV_FETCH_ASSOC)) {
     $theVariable3[] =$row3['Lng'];
 }
-echo $theVariable3[0]."<br>\n";
-echo $theVariable3[1];
 
 sqlsrv_free_stmt($getResults3);
 ?>
@@ -96,7 +89,7 @@ var imageSrc = new Array("<?=implode("\",\"" , $theVariable);?>");
 
 for (var i = 0; i < positions1.length; i ++) {   
     // 마커 이미지의 이미지 크기 입니다
-    var imageSize = new kakao.maps.Size(24, 35); 
+    var imageSize = new kakao.maps.Size(60, 50); 
     
     // 마커 이미지를 생성합니다    
     var markerImage = new kakao.maps.MarkerImage(imageSrc[i], imageSize); 
@@ -108,26 +101,6 @@ for (var i = 0; i < positions1.length; i ++) {
         image : markerImage // 마커 이미지 
     });
 }
-
-
-/*
-var imageSrc = '', // 마커이미지의 주소입니다    
-    imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
-    imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
-      
-// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
-var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
-    markerPosition = new kakao.maps.LatLng(<?=$Lat?>, <?=$Lng?>); // 마커가 표시될 위치입니다
-
-// 마커를 생성합니다
-var marker = new kakao.maps.Marker({
-    position: markerPosition, 
-    image: markerImage // 마커이미지 설정 
-});
-
-// 마커가 지도 위에 표시되도록 설정합니다
-marker.setMap(map);  
-*/
 </script>
 </form>
 <button style="height:100px; width:100px; font-size: 25px;" onclick="location.href='./write.php'"> 글 작성 </button>
