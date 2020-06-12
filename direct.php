@@ -22,7 +22,8 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     $theVariable = array($row['filename']); 
 }
 
-echo $theVariable[0];
+echo $theVariable[0]."<br>\n";
+echo $theVariable[1]."<br>\n";
 sqlsrv_free_stmt($getResults);
 
 $connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
@@ -40,6 +41,11 @@ while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
     $theVariable2 = array($row2['Lat']);
     $theVariable3 = array($row2['Lng']);
 }
+
+echo $theVariable2[0]."<br>\n";
+echo $theVariable2[1]."<br>\n";
+echo $theVariable3[1]."<br>\n";
+echo $theVariable3[2];
 
 sqlsrv_free_stmt($getResults2);
 ?>
