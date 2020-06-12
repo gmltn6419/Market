@@ -8,8 +8,6 @@ catch (PDOException $e) {
     die(print_r($e));
 }
 
-$theVariable = [];
-
 $connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:market01.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
@@ -21,16 +19,13 @@ $getResults= sqlsrv_query($conn, $tsql);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {    
-    $theVariable[] = $row['filename']; 
+    $theVariable = array($row['filename']); 
 }
 sqlsrv_free_stmt($getResults);
 
 $connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:market01.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
-
-$theVariable2 = [];
-$theVariable3 = [];
 
 $tsql2= "SELECT Lat, Lng FROM product";
 $getResults2= sqlsrv_query($conn, $tsql2);
@@ -40,8 +35,8 @@ if ($getResults2 == FALSE)
     echo (sqlsrv_errors());
 
 while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
-    $theVariable2[] = $row2['Lat'];
-    $theVariable3[] = $row2['Lng'];
+    $theVariable2 = array($row2['Lat']);
+    $theVariable3 = array($row2['Lng']);
 }
 
 sqlsrv_free_stmt($getResults2);
