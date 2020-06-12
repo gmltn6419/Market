@@ -29,12 +29,9 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 //$path = $_SERVER['DOCUMENT_ROOT'].'/testBBS/';
 //$path = "./";
 
-$tsql= "INSERT INTO product VALUES ('$title','$price','$dbLat','$dbLng','$id')";
+$tsql= "INSERT INTO product VALUES ('$title','$price','$dbLat','$dbLng')";
 
 $getResults= sqlsrv_query($conn, $tsql);
-
-if ($getResults == FALSE)
-    echo (sqlsrv_errors());
 
 sqlsrv_free_stmt($getResults);
 
