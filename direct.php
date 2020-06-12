@@ -64,8 +64,8 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-var positions[] = "";
-var imageSrc[] = "";
+var positions = new Array();
+var imageSrc = new Array();
 
 for (var i = 0; i < <?=$theVariable2?>.length; i ++) {
     positions[i] = latlng: new kakao.maps.LatLng(<?=$theVariable2?>[i],<?=$theVariable3?>[i]);
