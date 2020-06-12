@@ -6,6 +6,7 @@
 <html>
 <head>
     <title>글 쓰기 </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ae877255e92416f6f5b8b16227ee8c5"></script>
 </head>
 <body>
