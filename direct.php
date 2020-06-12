@@ -21,6 +21,8 @@ if ($getResults == FALSE)
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {    
     $theVariable = array($row['filename']); 
 }
+
+echo $theVariable[0];
 sqlsrv_free_stmt($getResults);
 
 $connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
