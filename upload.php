@@ -35,11 +35,7 @@ $getResults= sqlsrv_query($conn, $tsql);
 // echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
-while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-    //echo ($row['id'] . " " . $row['pw'] . PHP_EOL);
-    //$id = $row['id'];
-    //$pw = $row['pw'];
-}
+
 sqlsrv_free_stmt($getResults);
 
 $connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
@@ -52,7 +48,8 @@ $getResults2= sqlsrv_query($conn, $tsql2);
 //echo ("Reading data from table" . PHP_EOL);
 if ($getResults2 == FALSE)
     echo (sqlsrv_errors());
-while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
+
+if($tsql2){
     echo "글 작성 완료!";
     echo "<a href=./index.php>back page</a>";
 }
