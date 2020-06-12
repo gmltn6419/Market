@@ -8,7 +8,7 @@ catch (PDOException $e) {
     die(print_r($e));
 }
 
-$theVariable = array();
+$theVariable = [];
 
 $connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:market01.database.windows.net,1433";
@@ -21,7 +21,7 @@ $getResults= sqlsrv_query($conn, $tsql);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {    
-    $theVariable = $row['filename']; 
+    $theVariable[] = $row['filename']; 
 }
 sqlsrv_free_stmt($getResults);
 
@@ -29,8 +29,8 @@ $connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "M
 $serverName = "tcp:market01.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
-$theVariable2 = array();
-$theVariable3 = array();
+$theVariable2 = [];
+$theVariable3 = [];
 
 $tsql2= "SELECT Lat, Lng FROM product";
 $getResults2= sqlsrv_query($conn, $tsql2);
@@ -40,8 +40,8 @@ if ($getResults2 == FALSE)
     echo (sqlsrv_errors());
 
 while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
-    $theVariable2 = $row2['Lat'];
-    $theVariable3 = $row2['Lng'];
+    $theVariable2[] = $row2['Lat'];
+    $theVariable3[] = $row2['Lng'];
 }
 
 sqlsrv_free_stmt($getResults2);
@@ -78,7 +78,7 @@ for (var i = 0; i < positions1.length; i ++) {
     // 마커를 생성합니다
     var marker = new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
-        position: new kakao.maps.LatLng(35.16825697799745, 128.99625354800833),// 마커를 표시할 위치
+        position: new kakao.maps.LatLng(position1[i], position2[i]),// 마커를 표시할 위치
         image : markerImage // 마커 이미지 
     });
 }
