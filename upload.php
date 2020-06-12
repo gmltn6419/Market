@@ -51,7 +51,7 @@ if ($getResults2 == FALSE)
 
 if($tsql2){
     echo "글 작성 완료! <br>\n";
-    echo "<a href=./index.php>back page</a>";
+    echo "<a href=./direct.php>back page</a>";
 }
 
 sqlsrv_free_stmt($getResults2);
