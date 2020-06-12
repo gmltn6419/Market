@@ -1,6 +1,8 @@
 <?php
     session_start();
+    //header('Content-Type: text/html; charset=utf8');
 ?>
+<!DOCTYPE html>
 <html>
 <head>
     <title>글 쓰기 </title>
