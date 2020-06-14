@@ -86,6 +86,8 @@ while ($row4 = sqlsrv_fetch_array($getResults4, SQLSRV_FETCH_ASSOC)) {
     $theVariable5[] =$row4['price'];
 }
 
+echo $theVariable4[0];
+
 sqlsrv_free_stmt($getResults4);
 ?>
 
@@ -141,7 +143,7 @@ function click(map, marker, infowindow) {
       // 마커 위에 인포윈도우를 표시합니다
       return function(){
         infowindow.open(map, marker);
-}
+    }
         
 }
 </script>
