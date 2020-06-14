@@ -130,7 +130,7 @@ for (var i = 0; i < positions1.length; i ++) {
 
     // 마커에 표시할 인포윈도우를 생성합니다 
     var infowindow = new kakao.maps.InfoWindow({
-        content: '<div> 제목 : '+title[i]+'<br> 가격 : '+price[i]+'<br>',
+        content: '<div> 제목 : '+title[i]+'<br> 가격 : '+price[i]+'</div>',
         removable : true
     });
 
@@ -141,7 +141,7 @@ function click(map, marker, infowindow) {
       // 마커 위에 인포윈도우를 표시합니다
       return function(){
         infowindow.open(map, marker);
-      }
+}
         
 }
 </script>
