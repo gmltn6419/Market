@@ -86,8 +86,6 @@ while ($row4 = sqlsrv_fetch_array($getResults4, SQLSRV_FETCH_ASSOC)) {
     $theVariable5[] =$row4['price'];
 }
 
-echo ($theVariable4[0]);
-
 sqlsrv_free_stmt($getResults4);
 ?>
 
@@ -115,7 +113,6 @@ var imageSrc = new Array("<?=implode("\",\"" , $theVariable);?>");
 var title = new Array("<?=implode("\",\"" , $theVariable4);?>");
 var price = new Array("<?=implode("\",\"" , $theVariable5);?>");
 
-document.write(title[0]);
 
 for (var i = 0; i < positions1.length; i ++) {   
     // 마커 이미지의 이미지 크기 입니다
