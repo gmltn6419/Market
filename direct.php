@@ -134,10 +134,15 @@ for (var i = 0; i < positions1.length; i ++) {
         removable : true
     });
 
-    kakao.maps.event.addListener(marker, 'click', function() {
+    kakao.maps.event.addListener(marker, 'click', click(map,marker,infowindow));
+}
+
+function click(map, marker, infowindow) {
       // 마커 위에 인포윈도우를 표시합니다
-      infowindow.open(map, marker);  
-    });
+      return function(){
+        infowindow.open(map, marker);
+      }
+        
 }
 </script>
 </form>
