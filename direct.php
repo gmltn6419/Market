@@ -125,22 +125,20 @@ for (var i = 0; i < positions1.length; i ++) {
         map: map, // 마커를 표시할 지도
         position: new kakao.maps.LatLng(positions1[i], positions2[i]),// 마커를 표시할 위치
         image : markerImage // 마커 이미지 
+        clickable:true
     });
 
     // 마커에 표시할 인포윈도우를 생성합니다 
     var infowindow = new kakao.maps.InfoWindow({
-        content: '<div> 제목 : '+title[i]+'<br> 가격 : '+price[i]+'<br>'
-        removable : true;
+        content: '<div> 제목 : '+title[i]+'<br> 가격 : '+price[i]+'<br>',
+        removable : true
     });
 
     kakao.maps.event.addListener(marker, 'click', function() {
       // 마커 위에 인포윈도우를 표시합니다
       infowindow.open(map, marker);  
-});
+    });
 }
-
-
-
 </script>
 </form>
 <div align="center">
