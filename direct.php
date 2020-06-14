@@ -115,6 +115,8 @@ var imageSrc = new Array("<?=implode("\",\"" , $theVariable);?>");
 var title = new Array("<?=implode("\",\"" , $theVariable4);?>");
 var price = new Array("<?=implode("\",\"" , $theVariable5);?>");
 
+document.write(title[0]);
+
 for (var i = 0; i < positions1.length; i ++) {   
     // 마커 이미지의 이미지 크기 입니다
     var imageSize = new kakao.maps.Size(100, 60); 
