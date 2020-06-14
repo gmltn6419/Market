@@ -17,6 +17,7 @@
     위치 : <input type="text" name="location" placeholder="위치를 입력하세요!" style="width:300px">
     <br>
     마감 일 : <input type="date" name="date">
+    <br>
     <input type="submit" value="등록" />
 </div>
 </form>
