@@ -27,7 +27,7 @@ $tsql= "SELECT * from coupon";
 
 $getResults= sqlsrv_query($conn, $tsql);
 
-echo "<table>";
+echo "<table border="1">";
 echo "<th> 글 번호 </th>";
 echo "<th> 쿠폰 번호 </th>";
 echo "<th> 사용처 </th>";
