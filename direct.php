@@ -124,7 +124,7 @@ for (var i = 0; i < positions1.length; i ++) {
     var marker = new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
         position: new kakao.maps.LatLng(positions1[i], positions2[i]),// 마커를 표시할 위치
-        image : markerImage // 마커 이미지 
+        image : markerImage, // 마커 이미지 
         clickable:true
     });
 
