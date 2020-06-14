@@ -7,6 +7,7 @@ $id=$_SESSION['userid'];
 $cno=$_POST['cno'];
 $cname = $_POST['cname'];
 $location = $_POST['location'];
+$date = $_POST['date'];
 
 // PHP Data Objects(PDO) Sample Code:
 try {
@@ -26,7 +27,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 //$path = $_SERVER['DOCUMENT_ROOT'].'/testBBS/';
 //$path = "./";
 
-$tsql= "INSERT INTO coupon VALUES ('$cno','$cname','$location')";
+$tsql= "INSERT INTO coupon VALUES ('$cno','$cname','$location','TO_CHAR($date)')";
 
 $getResults= sqlsrv_query($conn, $tsql);
 

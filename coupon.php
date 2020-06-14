@@ -32,12 +32,14 @@ echo "<th> 글 번호 </th>";
 echo "<th> 쿠폰 번호 </th>";
 echo "<th> 사용처 </th>";
 echo "<th> 위치 </th>";
+echo "<th> 마감 일 </th>";
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {    
     echo "<tr>";
     echo "<td>".$row['bbsno']."</td>";
     echo "<td>".$row['cno']."</td>";
     echo "<td>".$row['cname']."</td>";
     echo "<td>".$row['location']."</td>";
+    echo "<td>".$row['date']."</td>";
     echo "</tr>";
 }
 echo "</table>";
