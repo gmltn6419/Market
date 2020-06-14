@@ -65,13 +65,5 @@ if($tsql2){
     echo "회원가입이 완료되었습니다!!!";
     echo "<a href=index.php>로그인 하기</a>";
 }
-
-if ($getResults2 == FALSE)
-    echo (sqlsrv_errors());
-while ($row = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
-    //echo ($row['id'] . " " . $row['pw'] . PHP_EOL);
-    //$id = $row['id'];
-    //$pw = $row['pw'];
-}
 sqlsrv_free_stmt($getResults2);
 ?>

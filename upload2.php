@@ -27,7 +27,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 //$path = $_SERVER['DOCUMENT_ROOT'].'/testBBS/';
 //$path = "./";
 
-$tsql= "INSERT INTO coupon VALUES ('$cno','$cname','$location','TO_CHAR($date)')";
+$tsql= "INSERT INTO coupon VALUES ('$cno','$cname','$location','$date')";
 
 $getResults= sqlsrv_query($conn, $tsql);
 
