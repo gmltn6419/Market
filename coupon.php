@@ -27,19 +27,19 @@ $tsql= "SELECT * from coupon";
 
 $getResults= sqlsrv_query($conn, $tsql);
 
-echo "<table border=1 align='center'>";
-echo "<th> 글 번호 </th>";
-echo "<th> 쿠폰 번호 </th>";
-echo "<th> 사용처 </th>";
-echo "<th> 위치 </th>";
-echo "<th> 마감 일 </th>";
+echo "<table border=1>";
+echo "<th align=center> 글 번호 </th>";
+echo "<th align=center> 쿠폰 번호 </th>";
+echo "<th align=center> 사용처 </th>";
+echo "<th align=center> 위치 </th>";
+echo "<th align=center> 마감 일 </th>";
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {    
     echo "<tr>";
-    echo "<td>".$row['bbsno']."</td>";
-    echo "<td>".$row['cno']."</td>";
-    echo "<td>".$row['cname']."</td>";
-    echo "<td>".$row['location']."</td>";
-    echo "<td>".$row['date']."</td>";
+    echo "<td align=center>".$row['bbsno']."</td>";
+    echo "<td align=center>".$row['cno']."</td>";
+    echo "<td align=center>".$row['cname']."</td>";
+    echo "<td align=center>".$row['location']."</td>";
+    echo "<td align=center>".$row['date']."</td>";
     echo "</tr>";
 }
 echo "</table>";
