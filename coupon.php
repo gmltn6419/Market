@@ -41,7 +41,7 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     echo "<td>".$row['location']."</td>";
     echo "</tr>";
 }
-echo "</table>"
+echo "</table>";
 
 sqlsrv_free_stmt($getResults);
 ?>
