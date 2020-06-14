@@ -66,23 +66,6 @@ while ($row3 = sqlsrv_fetch_array($getResults3, SQLSRV_FETCH_ASSOC)) {
 }
 
 sqlsrv_free_stmt($getResults3);
-
-$connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market1", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:market01.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
-
-$tsql4= "SELECT title FROM product where pno = 9";
-$getResults4= sqlsrv_query($conn, $tsql4);
-
-//echo ("Reading data from table" . PHP_EOL);
-if ($getResults4 == FALSE)
-    echo (sqlsrv_errors());
-
-while ($row4 = sqlsrv_fetch_array($getResults4, SQLSRV_FETCH_ASSOC)) {
-    echo $row4['title'];
-}
-
-sqlsrv_free_stmt($getResults4);
 ?>
 
 <html>
