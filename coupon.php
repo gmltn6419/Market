@@ -27,12 +27,11 @@ $tsql= "SELECT * from coupon";
 
 $getResults= sqlsrv_query($conn, $tsql);
 
-echo "<table border="1" width="70%" height="200" align="center">";
+echo "<table>";
 echo "<th> 글 번호 </th>";
 echo "<th> 쿠폰 번호 </th>";
 echo "<th> 사용처 </th>";
 echo "<th> 위치 </th>";
-
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {    
     echo "<tr>";
     echo "<td>".$row['bbsno']."</td>";
