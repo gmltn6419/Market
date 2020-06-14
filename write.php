@@ -20,7 +20,7 @@
     가격 : <input type="text" name="price" placeholder="가격을 입력하세요!" style="width:300px">
     <br>
     <p><em>지도를 클릭해주세요!</em></p> 
-    <div id="map" style="width:50%;height:350px;"></div>
+    <div id="map" style="width:50%;height:350px;" align="center"></div>
     <div id="clickLatlng"></div>
  
     <script>
