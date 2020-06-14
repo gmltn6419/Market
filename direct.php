@@ -76,7 +76,7 @@ sqlsrv_free_stmt($getResults3);
 </head>
 <body>
 <form>
-<div align='center' id="map" style="width:50%;height:350px;"></div>
+<div id="map" style="width:100%;height:350px;"></div>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
@@ -106,7 +106,7 @@ for (var i = 0; i < positions1.length; i ++) {
 }
 </script>
 </form>
-<button style="height:100px; width:100px; font-size: 25px;" onclick="location.href='./write.php'"> 글 작성 </button>
+<button style="height:100px; width:100px; font-size: 20px;" onclick="location.href='./write.php'"> 글 작성 </button>
 <button style="height:100px; width:100px; font-size: 20px;" onclick="location.href='./index.php'"> 메인화면 </button>
 </body>
 </html>
