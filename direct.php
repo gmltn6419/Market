@@ -66,6 +66,27 @@ while ($row3 = sqlsrv_fetch_array($getResults3, SQLSRV_FETCH_ASSOC)) {
 }
 
 sqlsrv_free_stmt($getResults3);
+
+$connectionInfo = array("UID" => "heesu", "pwd" => "dlvlwk12@", "Database" => "Market1", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:market01.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+
+$tsql4= "SELECT title, price FROM product";
+$getResults4= sqlsrv_query($conn, $tsql4);
+
+$theVariable4 = [];
+$theVariable5 = [];
+
+//echo ("Reading data from table" . PHP_EOL);
+if ($getResults4 == FALSE)
+    echo (sqlsrv_errors());
+
+while ($row4 = sqlsrv_fetch_array($getResults4, SQLSRV_FETCH_ASSOC)) {
+    $theVariable4[] =$row4['title'];
+    $theVariable5[] =$row4['price'];
+}
+
+sqlsrv_free_stmt($getResults4);
 ?>
 
 <html>
@@ -89,6 +110,8 @@ var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니
 var positions1 = new Array("<?=implode("\",\"" , $theVariable2);?>");
 var positions2 = new Array("<?=implode("\",\"" , $theVariable3);?>");
 var imageSrc = new Array("<?=implode("\",\"" , $theVariable);?>");
+var title = new Array("<?=implode("\",\"" , $theVariable4);?>");
+var price = new Array("<?=implode("\",\"" , $theVariable5);?>");
 
 for (var i = 0; i < positions1.length; i ++) {   
     // 마커 이미지의 이미지 크기 입니다
@@ -103,7 +126,34 @@ for (var i = 0; i < positions1.length; i ++) {
         position: new kakao.maps.LatLng(positions1[i], positions2[i]),// 마커를 표시할 위치
         image : markerImage // 마커 이미지 
     });
+
+    // 마커에 표시할 인포윈도우를 생성합니다 
+    var infowindow = new kakao.maps.InfoWindow({
+        content: '<div> 제목 : '+title[i]+'<br> 가격 : '+price[i]+'<br>'
+    });
+
+    // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+    // 이벤트 리스너로는 클로저를 만들어 등록합니다 
+    // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
 }
+
+// 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+function makeOverListener(map, marker, infowindow) {
+    return function() {
+        infowindow.open(map, marker);
+    };
+}
+
+// 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+function makeOutListener(infowindow) {
+    return function() {
+        infowindow.close();
+    };
+}
+
+
 </script>
 </form>
 <div align="center">
