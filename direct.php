@@ -106,9 +106,9 @@ for (var i = 0; i < positions1.length; i ++) {
 }
 </script>
 </form>
-<form align="center">
+<div align="center">
 <button style="height:100px; width:100px; font-size: 20px;" onclick="location.href='./write.php'"> 글 작성 </button>
 <button style="height:100px; width:100px; font-size: 20px;" onclick="location.href='./index.php'"> 메인화면 </button>
-</form>
+</div>
 </body>
 </html>
