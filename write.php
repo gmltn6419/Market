@@ -10,7 +10,7 @@
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ae877255e92416f6f5b8b16227ee8c5"></script>
 </head>
 <body>
-<form enctype="multipart/form-data" name="form" method="post" action="upload.php">
+<form enctype="multipart/form-data" name="form" method="post" action="upload.php" align="center">
     <input type="hidden" name="dbLat" id="dbLat" />
     <input type="hidden" name="dbLng" id="dbLng" />
     사진 : <input type="file" name="imageform" />
