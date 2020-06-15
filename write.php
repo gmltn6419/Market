@@ -67,7 +67,7 @@
     });
     </script>
     <br>
-    <input type="submit" value="글작성" />
+    <input type="submit" value="글작성" align="center"/>
 </form>
 </body>
 </html>
