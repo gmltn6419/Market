@@ -10,7 +10,8 @@
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ae877255e92416f6f5b8b16227ee8c5"></script>
 </head>
 <body>
-<form enctype="multipart/form-data" name="form" method="post" action="upload.php" align="center">
+<form enctype="multipart/form-data" name="form" method="post" action="upload.php">
+    <div align="center">
     <input type="hidden" name="dbLat" id="dbLat" />
     <input type="hidden" name="dbLng" id="dbLng" />
     사진 : <input type="file" name="imageform" />
@@ -19,7 +20,8 @@
     <br>
     가격 : <input type="text" name="price" placeholder="가격을 입력하세요!" style="width:300px">
     <br>
-    <p><em>지도를 클릭해주세요!</em></p> 
+    <p><em>지도를 클릭해주세요!</em></p>
+    </div> 
     <div id="map" style="width:100%;height:350px;"></div>
     <div id="clickLatlng"></div>
  
